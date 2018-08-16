@@ -11,15 +11,16 @@ const ForecastSummary = props => (
     </div>
     <div className="forecast-summary__temperature">{props.temperature}&#176;c</div>
     <div className="forecast-summary__description">{props.description}</div>
+    <div><button className="details-button" onClick={() => props.onSelect(props.date)}>More details</button></div>
   </div>
 );
-
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   temperature: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  onSelect: PropTypes.func,
 };
 
 export default ForecastSummary;
